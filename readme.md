@@ -1,1 +1,1 @@
-# mam_counter - модуль couter
+# mam_counter - модуль counter
