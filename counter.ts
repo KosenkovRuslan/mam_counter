@@ -55,20 +55,8 @@ class $project_counter extends $project_lom_view {
 			this.Inc(),
 		]
 	}
-
-	static mount() {
-		if ( typeof document === 'undefined' ) return
-		
-		const node = document.querySelector( '#root' )
-		const obj = new $project_counter()
-
-		node?.replaceWith( obj.dom_tree() )
-
-		// Реактивность добавится в следующей главе, сейчас воспользуемся костылем
-		setInterval( ()=> obj.dom_tree() , 100 )
-	}
 }
 
 // Вызываем для монтирования приложения в DOM-дерево
-$project_counter.mount()
+$project_lom_view.root = ()=> $project_counter
 
